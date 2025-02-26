@@ -9,9 +9,17 @@ createRoot(document.getElementById('root')!).render(
     <KindeProvider
 		clientId="e9b6460b3ebb45779f3e7389b65387e9"
 		domain="https://devgypsy.kinde.com"
-		redirectUri="http://localhost:5173"
-		logoutUri="http://localhost:5173"
-	>
+		redirectUri={
+      process.env.NODE_ENV === 'production' ?
+        'https://todo-with-auth-two.vercel.app/' :
+        'http://localhost:5173'
+      }
+		logoutUri={
+      process.env.NODE_ENV === 'production' ?
+        'https://todo-with-auth-two.vercel.app/' :
+        'http://localhost:5173'
+      }
+	  >
     <App />
   </KindeProvider>
     
