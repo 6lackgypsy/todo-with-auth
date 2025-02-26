@@ -1,7 +1,7 @@
 type ButtonProps = {
 	children: React.ReactNode
 	type?: 'primary' | 'secondary'
-	onClick: () => Promise<void>
+	onClick?: () => Promise<void>
 }
 
 const Button = ({ children, type, onClick }: ButtonProps) => {
